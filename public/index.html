@@ -1,0 +1,16 @@
+<html>
+    <head>
+        <title>dChess</title>
+    </head>
+    <body>
+        <button id='checkbutton'>click</button>
+        <script src='js/jquerymin.js'></script>
+        <script src='/socket.io/socket.io.js'></script>
+        <script>
+            socket = io();
+            $('#checkbutton').click(function(){
+                socket.emit('button','working!');
+            });
+        </script>
+    </body>
+</html>
