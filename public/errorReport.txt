@@ -1,0 +1,7 @@
+1. /socket.io problem : /socketio not able to refer to socket io. (Net:ERR aborted) Somehow changing port and trying again seems to work.
+
+2. putting index.js outside js file gives an error.
+
+3. dont know how css loads the squares: internal working of chessboard.js. you have to have css in css file and images in img file as given.
+
+4. onDrop function not firing : you have to  put board =ChessBoard('board',cfg) and cfg after everything.
