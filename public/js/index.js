@@ -24,17 +24,17 @@ var onSnapEnd = function () {
 
 
 /////////////////socket io start
+
+
 $(function () {
 
     socket = io();
-    $('#checkbutton').click(function () {
-        socket.emit('button', 'socket.io working!');
-    });
+    
 
     socket.on('join', function (msg) {
         console.log("joined as " + msg.color);
         playerColor = msg.color;
-        initGame();
+        initGame(msg);
     });
 
     socket.on('user joined', function (msg) {
@@ -72,12 +72,13 @@ var onDrop = function (source, target) {
 }; // written after others since it uses socket
 
 
-var initGame = function () {
+var initGame = function (msg) {
 
     game = new Chess();
     var cfg = {
         draggable: true,
         position: 'start',
+        orientation: msg.color,
         onDragStart: onDragStart,
         onDrop: onDrop,
         onSnapEnd: onSnapEnd,
